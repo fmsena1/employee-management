@@ -22,9 +22,17 @@ jobs:
         run: npm install
         working-directory: server
 
+      - name: Build da aplicação
+        run: npm run build || echo "Nenhum passo de build definido"
+        working-directory: server
+
       - name: Instalar a CLI do Heroku
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
+
+      - name: Definir buildpack do Heroku
+        run: |
+          heroku buildpacks:set heroku/nodejs --app ${{ secrets.HEROKU_APP_NAME }}
 
       - name: Deploy para o Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
