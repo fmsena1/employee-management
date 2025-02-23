@@ -9,10 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./server
-
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
@@ -23,20 +19,11 @@ jobs:
           node-version: '18'
 
       - name: Instalar dependências
-        run: npm install
-
-      - name: Build da aplicação
-        run: npm run build || echo "Nenhum passo de build definido"
+        run: npm install --prefix server
 
       - name: Instalar a CLI do Heroku
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
-
-      # - name: Set Heroku buildpack
-      #   env:
-      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      #   run: heroku buildpacks:set heroku/nodejs --app ${{ secrets.HEROKU_APP_NAME }}
-        
 
       - name: Deploy para o Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
