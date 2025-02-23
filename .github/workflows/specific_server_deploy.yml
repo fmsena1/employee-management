@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: server
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
@@ -20,11 +24,9 @@ jobs:
 
       - name: Instalar dependências
         run: npm install
-        working-directory: server
 
       - name: Build da aplicação
         run: npm run build || echo "Nenhum passo de build definido"
-        working-directory: server
 
       - name: Instalar a CLI do Heroku
         run: |
