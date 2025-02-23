@@ -1,0 +1,20 @@
+.table-container {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .no-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    padding: 18px;
+    width: 100%;
+  }
+  
+  .no-data-text {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }

@@ -1,0 +1,22 @@
+2025-02-23T00:12:52.102Z [error]: Error deleting employees: Invalid input, expected an array of IDs
+2025-02-23T00:12:55.773Z [error]: Error deleting employees: Invalid input, expected an array of IDs
+2025-02-23T00:14:01.746Z [error]: Error deleting employees: Invalid input, expected an array of IDs
+2025-02-23T00:14:08.542Z [error]: Error deleting employees: Invalid input, expected an array of IDs
+2025-02-23T01:17:46.884Z [error]: Invalid token: jwt expired
+2025-02-23T17:26:34.179Z [error]: Invalid token: jwt expired
+2025-02-23T17:26:51.259Z [error]: Invalid token: jwt expired
+2025-02-23T17:40:06.182Z [error]: Login error: Invalid email or password
+2025-02-23T17:48:12.764Z [error]: Login error: Invalid email or password
+2025-02-23T17:48:51.027Z [error]: Login error: Invalid email or password
+2025-02-23T17:49:24.678Z [error]: Login error: Invalid email or password
+2025-02-23T17:49:59.262Z [error]: Login error: Invalid email or password
+2025-02-23T17:52:41.579Z [error]: Login error: Invalid email or password
+2025-02-23T17:53:08.476Z [error]: Login error: Invalid email or password
+2025-02-23T17:55:44.180Z [error]: Login error: Invalid email or password
+2025-02-23T18:07:59.078Z [error]: Error creating employee: Validation error: 'EX2' is not a valid choice for enum [ 'PP', 'P', 'M', 'G', 'GG', 'XG' ]
+2025-02-23T18:08:08.930Z [error]: Error creating employee: Validation error
+2025-02-23T18:09:22.210Z [error]: Error creating employee: Validation error: 'EX4' is not a valid choice for enum [ 'PP', 'P', 'M', 'G', 'GG', 'XG' ]
+2025-02-23T18:09:32.840Z [error]: Error creating employee: Validation error
+2025-02-23T18:11:25.323Z [error]: Error creating employee: Validation error
+2025-02-23T18:21:36.267Z [error]: Login error: Invalid email or password
+2025-02-23T18:22:07.733Z [error]: Login error: Invalid email or password

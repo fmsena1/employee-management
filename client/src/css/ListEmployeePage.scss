@@ -1,0 +1,36 @@
+.full-height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .table-container {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .q-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-input {
+    width: 450px;
+  }
+  
+  .no-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    padding: 18px;
+    width: 100%;
+  }
+  
+  .no-data-text {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
