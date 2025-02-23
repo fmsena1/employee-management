@@ -3,8 +3,7 @@
     "version": "1.0.0",
     "main": "src/app.js",
     "scripts": {
-        "start": "node src/server.js",
-        "build": "npm run build"
+        "start": "node src/server.js"
     },
     "dependencies": {
         "@sendgrid/mail": "^8.1.4",
