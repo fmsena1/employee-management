@@ -29,15 +29,15 @@ jobs:
       - name: Deploy to Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: your-heroku-app-name
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
-          git remote add heroku https://git.heroku.com/${{ env.HEROKU_APP_NAME }}.git
+          git remote add heroku https://git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
           git push heroku main
 
       - name: Set environment variables
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: your-heroku-app-name
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
           heroku config:set CORS_ORIGINS=${{ secrets.CORS_ORIGINS }} --app ${{ env.HEROKU_APP_NAME }}
           heroku config:set SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }} --app ${{ env.HEROKU_APP_NAME }}
