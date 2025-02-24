@@ -9,12 +9,14 @@ export default {
   deleteError: 'Error deleting employees!',
   deleteSuccess: 'Employees deleted successfully!',
   edit: 'Edit',
+  editEmployeeDialogTitle: 'Edit Employee',
   email: 'Email',
   errorCreate: 'Error registering employee!',
+  invalidEmailOrPassword: 'Invalid email or password',
   login: 'Login',
   loginError: 'Error logging in!',
   loginSuccess: 'Login successful!',
-  logout: "Logout",
+  logout: 'Logout',
   massDeleteConfirmation: 'Are you sure you want to delete all selected employees?',
   massDeleteError: 'Error trying to delete selected employees!',
   name: 'Name',
@@ -41,4 +43,5 @@ export default {
   sendEmail: 'Send Email',
   shirtSize: 'Shirt Size',
   shoeSize: 'Shoe Size',
-}
+  update: 'Edit',
+};

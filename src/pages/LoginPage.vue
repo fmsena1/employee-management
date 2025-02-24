@@ -2,7 +2,7 @@
   <q-page class="flex flex-center">
     <q-card class="q-pa-lg q-mt-md" style="width: 400px; border: 1px solid #ccc; border-radius: 8px;">
       <q-card-section>
-        <div class="text-h4">{{ isLogin ? 'Login' : 'Register' }}</div>
+        <div class="text-h4">{{ isLogin ? $t('login') : $t('register') }}</div>
       </q-card-section>
       <q-card-section>
         <q-form @submit.prevent="handleSubmit" class="q-gutter-md">
@@ -63,6 +63,7 @@ const handleSubmit = async () => {
         message: $t('notifications.registerSuccess'),
         position: 'top-right'
       });
+      toggleMode();
     }
   } catch (error) {
     console.log(error.message);

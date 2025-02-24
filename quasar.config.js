@@ -11,6 +11,7 @@ export default defineConfig((ctx) => {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',
       },
+      outDir: 'dist',
       vueRouterMode: 'hash',
       vitePlugins: [
         ['@intlify/unplugin-vue-i18n/vite', {
