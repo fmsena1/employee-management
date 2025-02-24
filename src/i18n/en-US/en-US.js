@@ -12,6 +12,7 @@ export default {
   editEmployeeDialogTitle: 'Edit Employee',
   email: 'Email',
   errorCreate: 'Error registering employee!',
+  fieldRequired: 'Field required',
   invalidEmailOrPassword: 'Invalid email or password',
   login: 'Login',
   loginError: 'Error logging in!',

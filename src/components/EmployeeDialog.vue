@@ -7,16 +7,21 @@
       </q-card-section>
 
       <q-card-section>
-        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8" maxlength="14"/>
-        <q-input v-model="_employee.name" :label="$t('name')" color="grey-8"/>
-        <q-input v-model="_employee.email" :label="$t('email')" color="grey-8"/>
-        <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" color="grey-8"/>
-        <q-input v-model="_employee.shoeSize" :label="$t('shoeSize')" type="number" :min="1" color="grey-8"/>
+        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8" maxlength="14"
+          :rules="[val => !!val || $t('fieldRequired')]" />
+        <q-input v-model="_employee.name" :label="$t('name')" color="grey-8"
+          :rules="[val => !!val || $t('fieldRequired')]" />
+        <div class="card-section">
+          <q-input v-model="_employee.email" :label="$t('email')" color="grey-8" />
+          <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" color="grey-8" />
+          <q-input v-model="_employee.shoeSize" :label="$t('shoeSize')" type="number" :min="1" color="grey-8" />
+        </div>
       </q-card-section>
 
       <q-card-actions align="right">
-        <q-btn color="primary" :label="$t('cancel')" @click="closeDialog" no-caps/>
-        <q-btn color="dark" :label="isEditMode ? $t('update') : $t('add')" @click="isEditMode ? updateEmployee() : createEmployee()" no-caps/>
+        <q-btn color="primary" :label="$t('cancel')" @click="closeDialog" no-caps />
+        <q-btn color="dark" :label="isEditMode ? $t('update') : $t('add')"
+          @click="isEditMode ? updateEmployee() : createEmployee()" no-caps />
       </q-card-actions>
     </q-card>
   </q-dialog>
@@ -107,3 +112,6 @@ watch(() => _employee.value.cpf, (newVal) => {
 });
 
 </script>
+<style scoped lang="scss">
+@import 'src/css/EmployeeDialog.scss';
+</style>

@@ -12,6 +12,7 @@ export default {
   editEmployeeDialogTitle: 'Editar Funcionário',
   email: 'Email',
   errorCreate: 'Erro ao cadastrar funcionário!',
+  fieldRequired: 'Campo obrigatório',
   invalidEmailOrPassword: 'Email ou senha inválida',
   login: 'Login',
   loginError: 'Erro ao realizar login!',
