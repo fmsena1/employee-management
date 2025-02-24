@@ -2,8 +2,8 @@
   <q-page class="flex flex-center login-page">
     <q-card class="q-pa-lg q-mt-md login-card">
       <q-card-section class="text-center">
-        <img src="../assets/favicon.svg" alt="Product Icon" width="56" height="56" />
-        <div class="text-h4 q-mt-md">{{ $t('productName') }}</div>
+        <img src="../assets/favicon-32x32.png" alt="Product Icon" width="140" height="140" />
+        <div class="text-h4">{{ $t('productName') }}</div>
         <div class="text-subtitle1">{{ $t('login') }}</div>
       </q-card-section>
       <q-card-section>
