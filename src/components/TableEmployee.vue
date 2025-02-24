@@ -1,6 +1,6 @@
 <template>
   <div class="table-container">
-    <q-table :rows="rows" :columns="columns" row-key="id" selection="multiple" v-model:selected="localSelected">
+    <q-table :rows="rows" :columns="columns" row-key="id" selection="multiple" v-model:selected="localSelected" :loading="loading">
       <template v-slot:body-cell-actions="props">
         <q-td :props="props">
           <q-btn flat round icon="edit" @click="editRow(props.row)">
@@ -33,6 +33,7 @@ const props = defineProps({
   rows: Array,
   columns: Array,
   selected: Array,
+  loading: Boolean,
 });
 
 const emit = defineEmits(['editRow', 'sendEmail', 'deleteRow', 'update:selected']);

@@ -7,7 +7,7 @@
       </q-card-section>
 
       <q-card-section>
-        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8"/>
+        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8" maxlength="14"/>
         <q-input v-model="_employee.name" :label="$t('name')" color="grey-8"/>
         <q-input v-model="_employee.email" :label="$t('email')" color="grey-8"/>
         <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" color="grey-8"/>
@@ -26,6 +26,7 @@
 import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useQuasar } from 'quasar';
+import { formatCPF } from 'src/utils/formatCPF';
 import { useEmployeeStore } from 'src/stores/employee-store';
 
 const { t: $t } = useI18n();
@@ -98,5 +99,10 @@ const updateEmployee = async () => {
 const closeDialog = () => {
   localIsOpen.value = false;
 };
+
+
+watch(() => _employee.value.cpf, (newVal) => {
+  _employee.value.cpf = formatCPF(newVal);
+});
 
 </script>

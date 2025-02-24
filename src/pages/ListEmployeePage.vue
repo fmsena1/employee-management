@@ -13,6 +13,7 @@
         :rows="filteredEmployees"
         :columns="columns"
         :selected="selectedEmployees"
+        :loading="employeeStore.loading"
         @editRow="openEditEmployeeDialog"
         @sendEmail="sendEmail"
         @deleteRow="deleteSelectedEmployees"
