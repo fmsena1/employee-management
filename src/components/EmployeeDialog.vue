@@ -7,9 +7,9 @@
       </q-card-section>
 
       <q-card-section>
-        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8" maxlength="14"
+        <q-input v-model="_employee.cpf" :label="$t('cpfRequired')" :readonly="isEditMode" color="grey-8" maxlength="14"
           :rules="[val => !!val || $t('fieldRequired')]" />
-        <q-input v-model="_employee.name" :label="$t('name')" color="grey-8"
+        <q-input v-model="_employee.name" :label="$t('nameRequired')" color="grey-8"
           :rules="[val => !!val || $t('fieldRequired')]" />
         <div class="card-section">
           <q-input v-model="_employee.email" :label="$t('email')" color="grey-8" />

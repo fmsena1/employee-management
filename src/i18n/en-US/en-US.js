@@ -5,6 +5,7 @@ export default {
   addEmployeeDialogTitle: 'Add Employee',
   cancel: 'Cancel',
   cpf: 'CPF',
+  cpfRequired: 'CPF*',
   delete: 'Delete',
   deleteError: 'Error deleting employee! | Error deleting {count} employees!',
   deleteSuccess: 'Employee deleted successfully! | {count} employees deleted successfully!',
@@ -21,6 +22,7 @@ export default {
   massDeleteConfirmation: 'Are you sure you want to delete all selected employees?',
   massDeleteError: 'Error trying to delete selected employees!',
   name: 'Name',
+  nameRequired: 'Name*',
   noDataAvailable: 'No data available',
   notifications: {
     deleteError: 'Error deleting employee! | Error deleting {count} employees!',

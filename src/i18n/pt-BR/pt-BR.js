@@ -5,6 +5,7 @@ export default {
   addEmployeeDialogTitle: 'Adicionar Funcionário',
   cancel: 'Cancelar',
   cpf: 'CPF',
+  cpfRequired: 'CPF*',
   delete: 'Deletar',
   deleteError: 'Erro ao excluir funcionário! | Erro ao excluir {count} funcionários!',
   deleteSuccess: 'Funcionário excluído com sucesso! | {count} funcionários excluídos com sucesso!',
@@ -21,6 +22,7 @@ export default {
   massDeleteConfirmation: 'Tem certeza que deseja excluir todos os funcionários selecionados?',
   massDeleteError: 'Erro ao tentar excluir funcionários selecionados!',
   name: 'Nome',
+  nameRequired: 'Nome*',
   noDataAvailable: 'Nenhum dado disponível',
   notifications: {
     deleteError: 'Erro ao excluir funcionário! | Erro ao excluir {count} funcionários!',

@@ -113,6 +113,7 @@ const deleteSelectedEmployees = async (ids) => {
 const sendEmail = async (ids) => {
   try {
     await employeeStore.sendEmail(ids);
+    console.log(ids, ids.length);
     $q.notify({
       type: 'positive',
       message: $t('notifications.sendEmailSuccess', ids.length, { count: ids.length }),
