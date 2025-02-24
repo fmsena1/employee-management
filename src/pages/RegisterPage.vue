@@ -1,10 +1,10 @@
 <template>
-  <q-page class="flex flex-center login-page">
-    <q-card class="q-pa-lg q-mt-md login-card">
+  <q-page class="flex flex-center register-page">
+    <q-card class="q-pa-lg q-mt-md register-card">
       <q-card-section class="text-center">
         <img src="../assets/favicon.svg" alt="Product Icon" width="56" height="56" />
         <div class="text-h4 q-mt-md">{{ $t('productName') }}</div>
-        <div class="text-subtitle1">{{ $t('login') }}</div>
+        <div class="text-subtitle1">{{ $t('register') }}</div>
       </q-card-section>
       <q-card-section>
         <q-form @submit.prevent="handleSubmit" class="q-gutter-md">
@@ -22,10 +22,10 @@
             {{ errorMessage }}
           </div>
           <div class="q-mt-md flex flex-center q-gutter-sm">
-            <q-btn type="submit" :label="$t('login')" color="primary" class="full-width"/>
+            <q-btn type="submit" :label="$t('register')" color="primary" class="full-width"/>
           </div>
           <div class="q-mt-md flex flex-center">
-            <span>{{ $t('noAccount') }} <a @click="navigateToRegister" class="link">{{ $t('register') }}</a></span>
+            <span>{{ $t('alreadyHaveAccount') }} <a @click="navigateToLogin" class="link">{{ $t('login') }}</a></span>
           </div>
         </q-form>
       </q-card-section>
@@ -52,12 +52,13 @@ const { t: $t } = useI18n();
 const handleSubmit = async () => {
   try {
     errorMessage.value = '';
-    await authStore.login(email.value, password.value, router);
+    await authStore.register(email.value, password.value, router);
     $q.notify({
       type: 'positive',
-      message: $t('notifications.loginSuccess'),
+      message: $t('notifications.registerSuccess'),
       position: 'top-right'
     });
+    navigateToLogin();
   } catch (error) {
     console.log(error.message);
     if (error.message === 'invalidEmailOrPassword') {
@@ -65,19 +66,19 @@ const handleSubmit = async () => {
     } else {
       $q.notify({
         type: 'negative',
-        message: $t('notifications.loginError'),
+        message: $t('notifications.registerError'),
         position: 'top-right'
       });
     }
-    console.error(`Login failed:`, error);
+    console.error(`Registration failed:`, error);
   }
 };
 
-const navigateToRegister = () => {
-  router.push('/register');
+const navigateToLogin = () => {
+  router.push('/login');
 };
 </script>
 
 <style scoped lang="scss">
-@import 'src/css/LoginPage.scss';
+@import 'src/css/RegisterPage.scss';
 </style>

@@ -95,7 +95,7 @@ const deleteSelectedEmployees = async (ids) => {
     await employeeStore.deleteSelectedEmployees(ids);
     $q.notify({
       type: 'positive',
-      message: $t('notifications.deleteSuccess'),
+      message: $t('notifications.deleteSuccess', ids.length, { count: ids.length }),
       position: 'top-right'
     });
     selectedEmployees.value = [];
@@ -103,7 +103,7 @@ const deleteSelectedEmployees = async (ids) => {
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message: $t('notifications.deleteError', { error: error.message }),
+      message: $t('notifications.deleteError', ids.length, { count: ids.length, error: error.message }),
       position: 'top-right'
     });
   }
@@ -114,13 +114,13 @@ const sendEmail = async (ids) => {
     await employeeStore.sendEmail(ids);
     $q.notify({
       type: 'positive',
-      message: $t('notifications.sendEmailSuccess'),
+      message: $t('notifications.sendEmailSuccess', ids.length, { count: ids.length }),
       position: 'top-right'
     });
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message: $t('notifications.sendEmailError', { error: error.message }),
+      message: $t('notifications.sendEmailError', ids.length, { count: ids.length, error: error.message }),
       position: 'top-right'
     });
   }

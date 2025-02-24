@@ -16,7 +16,7 @@
       </template>
       <template v-slot:no-data>
         <div class="no-data-container">
-          <q-icon name="warning" size="2em" />
+          <q-icon name="warning" size="4em" />
           <span class="no-data-text">{{ $t('noDataAvailable') }}</span>
         </div>
       </template>

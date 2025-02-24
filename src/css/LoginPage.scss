@@ -1,0 +1,33 @@
+.login-page {
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+  }
+  
+  .q-gutter-md {
+    gap: 16px;
+  }
+  
+  .q-gutter-sm {
+    gap: 8px;
+  }
+  
+  .error-message {
+    color: #B71C1C;
+  }
+  
+  .link {
+    color: $primary;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .login-card {
+    width: 480px; 
+    height: 480px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+  }

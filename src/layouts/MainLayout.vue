@@ -1,13 +1,21 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header v-if="isAuthenticated" elevated>
       <q-toolbar>
         <q-toolbar-title>
-          Employee Management
+          {{ $t('productName') }}
         </q-toolbar-title>
         <q-space />
-        <q-btn v-if="!isAuthenticated" flat :label="$t('login')" @click="navigateTo('/login')" no-caps />
-        <q-btn v-else flat :label="$t('logout')" @click="logout" no-caps/>
+        <q-btn-dropdown flat icon="person">
+          <q-list>
+            <q-item clickable v-ripple @click="logout">
+              <q-item-section avatar>
+                <q-icon name="logout" />
+              </q-item-section>
+              <q-item-section>{{ $t('logout') }}</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
       </q-toolbar>
     </q-header>
 
@@ -18,8 +26,8 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { useAuthStore } from 'src/stores/auth-store';
 import { useI18n } from 'vue-i18n';
 
@@ -28,10 +36,6 @@ const authStore = useAuthStore();
 const { t: $t } = useI18n();
 
 const isAuthenticated = computed(() => !!authStore.token);
-
-const navigateTo = (path) => {
-  router.push(path);
-};
 
 const logout = () => {
   authStore.logout(router);

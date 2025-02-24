@@ -7,11 +7,11 @@
       </q-card-section>
 
       <q-card-section>
-        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" />
-        <q-input v-model="_employee.name" :label="$t('name')"/>
-        <q-input v-model="_employee.email" :label="$t('email')" />
-        <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" />
-        <q-input v-model="_employee.shoeSize" :label="$t('shoeSize')" type="number" :min="1" />
+        <q-input v-model="_employee.cpf" :label="$t('cpf')" :readonly="isEditMode" color="grey-8"/>
+        <q-input v-model="_employee.name" :label="$t('name')" color="grey-8"/>
+        <q-input v-model="_employee.email" :label="$t('email')" color="grey-8"/>
+        <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" color="grey-8"/>
+        <q-input v-model="_employee.shoeSize" :label="$t('shoeSize')" type="number" :min="1" color="grey-8"/>
       </q-card-section>
 
       <q-card-actions align="right">
