@@ -36,6 +36,8 @@ export default {
     successCreate: 'Employee registered successfully!',
     updateError: 'Error editing employee!',
     updateSuccess: 'Employee edited successfully!',
+    genericError: 'An error occurred while performing the action!',
+    cpfAlreadyExists: 'The provided CPF is already registered. Please check the details and try again.',
   },
   password: 'Password',
   register: 'Register',
@@ -44,7 +46,7 @@ export default {
   shirtSize: 'Shirt Size',
   shoeSize: 'Shoe Size',
   update: 'Edit',
-  noAccount: 'Don\'t have an account yet?',
+  noAccount: "Don't have an account yet?",
   productName: 'Employee Management',
   alreadyHaveAccount: 'Already have an account?',
 };

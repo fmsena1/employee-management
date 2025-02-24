@@ -62,7 +62,7 @@ export const useEmployeeStore = defineStore('employee', {
         this.employees.push(response.data);
       } catch (error) {
         console.error('Error adding employee:', error);
-        throw new Error('errorCreate');
+        throw new Error(error.response.data.error);
       } finally {
         this.setLoadingFalseWithDelay();
       }

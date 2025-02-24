@@ -28,6 +28,7 @@ import { useI18n } from 'vue-i18n';
 import { useQuasar } from 'quasar';
 import { formatCPF } from 'src/utils/formatCPF';
 import { useEmployeeStore } from 'src/stores/employee-store';
+import { parseError } from 'src/utils/errorMap';
 
 const { t: $t } = useI18n();
 const $q = useQuasar();
@@ -69,9 +70,10 @@ const createEmployee = async () => {
     emit('employeeAdded');
     closeDialog();
   } catch (error) {
+    const errorMessageKey = parseError(error.message);
     $q.notify({
       type: 'negative',
-      message: $t('notifications.errorCreate', { error: error.message }),
+      message: $t(`notifications.${errorMessageKey}`, { error: error.message }),
       position: 'top-right'
     });
   }
@@ -99,7 +101,6 @@ const updateEmployee = async () => {
 const closeDialog = () => {
   localIsOpen.value = false;
 };
-
 
 watch(() => _employee.value.cpf, (newVal) => {
   _employee.value.cpf = formatCPF(newVal);

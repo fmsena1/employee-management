@@ -59,7 +59,6 @@ const handleSubmit = async () => {
       position: 'top-right'
     });
   } catch (error) {
-    console.log(error.message);
     if (error.message === 'invalidEmailOrPassword') {
       errorMessage.value = $t('invalidEmailOrPassword');
     } else {

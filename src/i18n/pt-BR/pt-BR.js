@@ -36,6 +36,8 @@ export default {
     successCreate: 'Funcionário cadastrado com sucesso!',
     updateError: 'Erro ao editar funcionário!',
     updateSuccess: 'Funcionário editado com sucesso!',
+    genericError: 'Ocorreu um erro ao realizar a ação!',
+    cpfAlreadyExists: 'O CPF informado já está cadastrado. Verifique os dados e tente novamente.',
   },
   password: 'Senha',
   register: 'Registrar',
