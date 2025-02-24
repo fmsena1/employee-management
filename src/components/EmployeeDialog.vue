@@ -11,11 +11,9 @@
           :rules="[val => !!val || $t('fieldRequired')]" />
         <q-input v-model="_employee.name" :label="$t('nameRequired')" color="grey-8"
           :rules="[val => !!val || $t('fieldRequired')]" />
-        <div class="card-section">
-          <q-input v-model="_employee.email" :label="$t('email')" color="grey-8" />
-          <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSize')" color="grey-8" />
-          <q-input v-model="_employee.shoeSize" :label="$t('shoeSize')" type="number" :min="1" color="grey-8" />
-        </div>
+          <q-input v-model="_employee.email" :label="$t('emailRequired')" color="grey-8" :rules="[val => !!val || $t('fieldRequired')]"/>
+          <q-select v-model="_employee.shirtSize" :options="shirtSizes" :label="$t('shirtSizeRequired')" color="grey-8" :rules="[val => !!val || $t('fieldRequired')]"/>
+          <q-input v-model="_employee.shoeSize" :label="$t('shoeSizeRequired')" type="number" :min="1" color="grey-8" :rules="[val => !!val || $t('fieldRequired')]"/>
       </q-card-section>
 
       <q-card-actions align="right">
@@ -112,6 +110,3 @@ watch(() => _employee.value.cpf, (newVal) => {
 });
 
 </script>
-<style scoped lang="scss">
-@import 'src/css/EmployeeDialog.scss';
-</style>

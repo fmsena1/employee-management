@@ -14,6 +14,7 @@ export const useEmployeeStore = defineStore('employee', {
 
   getters: {
     filteredEmployees: (state) => (search) => {
+      console.log(state.employees);
       return state.employees.filter(employee => {
         return (
           employee.cpf.toLowerCase().includes(search.toLowerCase()) ||
@@ -49,7 +50,6 @@ export const useEmployeeStore = defineStore('employee', {
       }
     },
     async addEmployee(employee) {
-      console.log("employee", employee)
       if (!cpfRegex.test(employee.cpf)) {
         throw new Error('errorCreate');
       }
@@ -68,7 +68,6 @@ export const useEmployeeStore = defineStore('employee', {
       }
     },
     async updateEmployee(updatedEmployee) {
-      console.log("employee", updatedEmployee)
       if (updatedEmployee.cpf && !cpfRegex.test(updatedEmployee.cpf)) {
         throw new Error('updateError');
       }
@@ -77,11 +76,7 @@ export const useEmployeeStore = defineStore('employee', {
       }
       this.loading = true;
       try {
-        const response = await api.put(`/employees/${updatedEmployee.id}`, updatedEmployee);
-        const index = this.employees.findIndex(employee => employee.id === updatedEmployee.id);
-        if (index !== -1) {
-          this.employees[index] = response.data;
-        }
+        await api.put(`/employees/${updatedEmployee.id}`, updatedEmployee);
       } catch (error) {
         console.error('Error updating employee:', error);
         throw new Error('updateError');
