@@ -1,7 +1,7 @@
 {
-  "name": "client1",
+  "name": "employeemanagement",
   "version": "0.0.1",
-  "description": "A Quasar Project",
+  "description": "Employee management",
   "productName": "Employee management",
   "author": "Filipe Magalhães Sena <94627887+fmsena1@users.noreply.github.com>",
   "type": "module",
