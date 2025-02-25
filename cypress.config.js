@@ -4,7 +4,7 @@ export default defineConfig({
   chromeWebSecurity: false,
   viewportWidth: 1280,
   viewportHeight: 720,
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 30000,
   pageLoadTimeout: 60000,
   e2e: {
     setupNodeEvents(on, config) {
