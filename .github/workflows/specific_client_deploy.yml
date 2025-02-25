@@ -11,22 +11,13 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
+        uses: actions/checkout@v4
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:8080
-          wait-on-timeout: 60s
-          command: npm run test:headless
 
   Deploy-Production:
     runs-on: ubuntu-latest
