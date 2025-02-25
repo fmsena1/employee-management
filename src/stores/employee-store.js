@@ -46,7 +46,7 @@ export const useEmployeeStore = defineStore('employee', {
           authStore.logout(router);
         }
       } finally {
-        this.setLoadingFalseWithDelay();
+        this.loading = false;
       }
     },
     async addEmployee(employee) {

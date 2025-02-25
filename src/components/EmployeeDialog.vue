@@ -18,7 +18,7 @@
 
       <q-card-actions align="right">
         <q-btn color="primary" :label="$t('cancel')" @click="closeDialog" no-caps />
-        <q-btn color="dark" :label="isEditMode ? $t('update') : $t('add')"
+        <q-btn :label="isEditMode ? $t('update') : $t('add')"
           @click="isEditMode ? updateEmployee() : createEmployee()" no-caps />
       </q-card-actions>
     </q-card>

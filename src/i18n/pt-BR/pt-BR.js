@@ -25,14 +25,14 @@ export default {
   noDataAvailable: 'Nenhum dado disponível',
   notifications: {
     deleteError: 'Erro ao excluir funcionário(s)!',
-    deleteSuccess: 'Funcionário(s) excluído com sucesso!',
+    deleteSuccess: 'Funcionário(s) excluído(s) com sucesso!',
     errorCreate: 'Erro ao cadastrar funcionário!',
     loginError: 'Erro ao realizar login!',
     loginSuccess: 'Login realizado com sucesso!',
     registerError: 'Erro ao registrar usuário!',
     registerSuccess: 'Cadastro realizado com sucesso!',
     sendEmailError: 'Erro ao enviar email(s)!',
-    sendEmailSuccess: 'Email(s) enviado com sucesso!',
+    sendEmailSuccess: 'Email(s) enviado(s) com sucesso!',
     successCreate: 'Funcionário cadastrado com sucesso!',
     updateError: 'Erro ao editar funcionário!',
     updateSuccess: 'Funcionário editado com sucesso!',
@@ -51,4 +51,5 @@ export default {
   noAccount: 'Ainda não tem uma conta?',
   productName: 'Employee Management',
   alreadyHaveAccount: 'Já tem uma conta?',
+  rowsPerPageLabel: 'Itens por página:',
 };

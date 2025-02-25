@@ -67,7 +67,8 @@ const handleSubmit = async () => {
       $q.notify({
         type: 'negative',
         message: $t('notifications.registerError'),
-        position: 'top-right'
+        position: 'top-right',
+        class: 'notify-error'
       });
     }
     console.error(`Registration failed:`, error);

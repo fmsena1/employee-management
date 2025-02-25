@@ -35,7 +35,7 @@ const router = useRouter();
 const authStore = useAuthStore();
 const { t: $t } = useI18n();
 
-const isAuthenticated = computed(() => !!authStore.token);
+const isAuthenticated = computed(() => !!authStore.token && authStore.token.trim() !== '');
 
 const logout = () => {
   authStore.logout(router);
