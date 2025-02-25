@@ -10,16 +10,32 @@ on:
       - main
 
 jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          wait-on: http://localhost:8080
+          wait-on-timeout: 60s
+          command: npm run test:headless
+
   Deploy-Production:
     runs-on: ubuntu-latest
+    needs: cypress-run
     steps:
       - uses: actions/checkout@v2
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Run Cypress Tests
-        run: npm run test:headless
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
