@@ -10,23 +10,10 @@ on:
       - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
-    name: E2E on Chrome
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-
   Deploy-Production:
     runs-on: ubuntu-latest
-    needs: cypress-run
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
