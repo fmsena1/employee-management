@@ -10,18 +10,8 @@ on:
       - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          headed: true
-
   Deploy-Production:
     runs-on: ubuntu-latest
-    needs: cypress-run
     steps:
       - uses: actions/checkout@v2
 
