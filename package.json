@@ -9,12 +9,11 @@
   "scripts": {
     "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{js,cjs,mjs,vue}\"",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
-    "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
     "postinstall": "quasar prepare",
-    "cypress:web": "npx cypress open",
-    "cypress:headless": "npx cypress run --browser electron" 
+    "test": "npx cypress open",
+    "test:headless": "npx cypress run --browser chrome" 
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
