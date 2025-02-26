@@ -2,8 +2,6 @@
   <div class="q-gutter-md row items-center justify-between">
     <div class="row items-center q-gutter-sm">
       <q-btn :label="$t('addEmployee')" class="text-weight-bold" icon="add" @click="openAddEmployeeDialog" no-caps/>
-      <q-btn :label="$t('sendEmail')" class="text-weight-bold" icon="email"
-        @click="sendEmail" :disable="selectedEmployees.length === 0" no-caps/>
       <q-btn :label="$t('delete')" class="text-weight-bold" icon="delete" color="primary"
         @click="deleteSelectedEmployees" :disable="selectedEmployees.length === 0" no-caps/>
     </div>
@@ -25,7 +23,7 @@ const props = defineProps({
   selectedEmployees: Array,
 });
 
-const emit = defineEmits(['update:search', 'openAddEmployeeDialog', 'sendEmail', 'deleteSelectedEmployees']);
+const emit = defineEmits(['update:search', 'openAddEmployeeDialog', 'deleteSelectedEmployees']);
 const localSearch = ref(props.search);
 
 watch(localSearch, (newValue) => {
@@ -34,10 +32,6 @@ watch(localSearch, (newValue) => {
 
 const openAddEmployeeDialog = () => {
   emit('openAddEmployeeDialog');
-};
-
-const sendEmail = () => {
-  emit('sendEmail');
 };
 
 const deleteSelectedEmployees = () => {

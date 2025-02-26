@@ -6,7 +6,6 @@
         :selectedEmployees="selectedEmployees"
         @update:search="search = $event"
         @openAddEmployeeDialog="openAddEmployeeDialog"
-        @sendEmail="sendEmail(getSelectedEmployeeIds())"
         @deleteSelectedEmployees="deleteSelectedEmployees(getSelectedEmployeeIds())"
       />
       <TableEmployee
@@ -15,7 +14,6 @@
         :selected="selectedEmployees"
         :loading="employeeStore.loading"
         @editRow="openEditEmployeeDialog"
-        @sendEmail="sendEmail"
         @deleteRow="deleteSelectedEmployees"
         @update:selected="selectedEmployees = $event"
       />
@@ -105,23 +103,6 @@ const deleteSelectedEmployees = async (ids) => {
     $q.notify({
       type: 'negative',
       message: $t('notifications.deleteError', { error: error.message }),
-      position: 'top-right'
-    });
-  }
-};
-
-const sendEmail = async (ids) => {
-  try {
-    await employeeStore.sendEmail(ids);
-    $q.notify({
-      type: 'positive',
-      message: $t('notifications.sendEmailSuccess'),
-      position: 'top-right'
-    });
-  } catch (error) {
-    $q.notify({
-      type: 'negative',
-      message: $t('notifications.sendEmailError', { error: error.message }),
       position: 'top-right'
     });
   }

@@ -96,16 +96,5 @@ export const useEmployeeStore = defineStore('employee', {
         this.setLoadingFalseWithDelay();
       }
     },
-    async sendEmail(ids) {
-      this.loading = true;
-      try {
-        await api.post('/employees/send', { ids });
-      } catch (error) {
-        console.error('Error sending email:', error);
-        throw new Error('sendEmailError');
-      } finally {
-        this.setLoadingFalseWithDelay();
-      }
-    },
   },
 });

@@ -7,9 +7,6 @@
           <q-btn flat round icon="edit" @click="editRow(props.row)">
             <q-tooltip class="bg-grey-10 shadow-4">{{ $t('edit') }}</q-tooltip>
           </q-btn>
-          <q-btn flat round icon="email" @click="sendEmail([props.row.id])">
-            <q-tooltip class="bg-grey-10 shadow-4">{{ $t('sendEmail') }}</q-tooltip>
-          </q-btn>
           <q-btn flat round icon="delete" @click="deleteRow([props.row.id])">
             <q-tooltip class="bg-grey-10 shadow-4">{{ $t('delete') }}</q-tooltip>
           </q-btn>
@@ -44,7 +41,7 @@ const pagination = ref({
   rowsPerPage: 10,
 });
 
-const emit = defineEmits(['editRow', 'sendEmail', 'deleteRow', 'update:selected']);
+const emit = defineEmits(['editRow', 'deleteRow', 'update:selected']);
 
 const localSelected = ref([...props.selected]);
 
@@ -62,10 +59,6 @@ watch(localSelected, (newVal) => {
 
 const editRow = (row) => {
   emit('editRow', row);
-};
-
-const sendEmail = (ids) => {
-  emit('sendEmail', ids);
 };
 
 const deleteRow = (ids) => {
